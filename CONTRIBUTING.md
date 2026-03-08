@@ -4,7 +4,7 @@ This document outlines guides to get started on developing the starter kit.
 
 ## Contributing to the docs
 
-Contributions to the docs are also welcome! We've documented the steps to do so [here](./docs/in-depth/contributing.md).
+Contributions to the docs are also welcome! We've documented the steps to do so [here](https://screepers.gitbook.io/screeps-typescript-starter/in-depth/contributing).
 
 ## The Five Golden Rules
 
