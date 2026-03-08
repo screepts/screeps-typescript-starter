@@ -29,7 +29,7 @@ Running `rollup -c` will compile your code and do a "dry run", preparing the cod
 
 You can use `-cw` instead of `-c` to automatically re-run when your source code changes - for example, `rollup -cw --environment DEST:main` will automatically upload your code to the `main` configuration every time your code is changed.
 
-Finally, there are also NPM scripts that serve as aliases for these commands in `package.json` for IDE integration. Running `npm run push-main` is equivalent to `rollup -c --environment DEST:main`, and `npm run watch-sim` is equivalent to `rollup -cw --dest sim`.
+Finally, there are also NPM scripts that serve as aliases for these commands in `package.json` for IDE integration. Running `npm run build -- --environment DEST:main` is equivalent to `rollup -c --environment DEST:main`, and `npm run watch` is equivalent to `rollup -cw`.
 
 #### Important! To upload code to a private server, you must have [screepsmod-auth](https://github.com/ScreepsMods/screepsmod-auth) installed and configured!
 
