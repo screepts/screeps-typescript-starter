@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { SourceMapConsumer } from "source-map";
+import { SourceMapConsumer } from "source-map-js";
 
 export class ErrorMapper {
   // Cache consumer
