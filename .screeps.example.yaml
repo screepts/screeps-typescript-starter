@@ -1,0 +1,23 @@
+servers:
+  main:
+    host: screeps.com
+    secure: true
+    token: "YOUR TOKEN https://screeps.com/#!/account/auth-tokens"
+  season:
+    host: screeps.com
+    secure: true
+    token: "YOUR TOKEN https://screeps.com/season/#!/account/auth-tokens"
+    path: /season
+  newbie:
+    host: screeps.newbieland.net
+    port: 21025
+    secure: false
+    username: "your username (case sensitive!)"
+    password: "your password"
+  pserver:
+    host: 127.0.0.1
+    port: 21025
+    secure: false
+    username: "your username (case sensitive!)"
+    password: "your password"
+# add your own servers
