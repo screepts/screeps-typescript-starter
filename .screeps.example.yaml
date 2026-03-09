@@ -20,4 +20,6 @@ servers:
     secure: false
     username: "your username (case sensitive!)"
     password: "your password"
+  #TODO: local:
+  #TODO: emma:
 # add your own servers
