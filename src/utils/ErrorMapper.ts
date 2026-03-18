@@ -1,5 +1,8 @@
 /* eslint-disable */
-import { SourceMapConsumer } from "source-map-js";
+import { SourceMapConsumer, type RawSourceMap } from "source-map-js";
+
+// This import will be emitted as is in the compiled JS to load compiled source maps at runtime
+declare const require: (path: "main.js.map") => RawSourceMap;
 
 export class ErrorMapper {
   // Cache consumer

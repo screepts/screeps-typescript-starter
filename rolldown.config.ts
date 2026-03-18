@@ -17,3 +17,9 @@ export default defineConfig({
     }),
   ],
 })
+
+declare var process: {
+  env: {
+    DEST?: string
+  }
+}
