@@ -3,16 +3,20 @@
     "module": "esnext",
     "lib": ["es2018"],
     "target": "es2018",
-    "moduleResolution": "Node",
     "paths": {
       "*": ["./src/*"]
     },
-    "sourceMap": true,
+    "moduleDetection": "force",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
     "strict": true,
-    "experimentalDecorators": true,
-    "noImplicitReturns": true,
-    "allowSyntheticDefaultImports": true,
-    "allowUnreachableCode": false,
+    "noUnusedLocals": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "skipLibCheck": true,
     "types": ["screeps", "lodash"]
   }
 }

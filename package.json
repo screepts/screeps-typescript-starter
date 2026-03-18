@@ -1,33 +1,37 @@
 {
   "name": "screeps-typescript-starter",
-  "version": "3.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "lint": "oxlint --type-check --type-aware",
-    "build": "rolldown -c",
-    "test": "node --run lint && node --run test:unit",
-    "test:unit": "vitest run --typecheck",
-    "watch": "rolldown -cw"
+  "version": "4.0.0",
+  "private": true,
+  "description": "A starter template for Screeps using TypeScript, Rolldown and Oxc",
+  "homepage": "https://github.com/screepers/screeps-typescript-starter#readme",
+  "bugs": {
+    "url": "https://github.com/screepers/screeps-typescript-starter/issues"
   },
+  "license": "Unlicense",
+  "author": "",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/screepers/screeps-typescript-starter.git"
   },
-  "author": "",
-  "license": "Unlicense",
-  "bugs": {
-    "url": "https://github.com/screepers/screeps-typescript-starter/issues"
+  "main": "index.js",
+  "scripts": {
+    "lint": "oxlint --type-aware --type-check",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check",
+    "build": "rolldown -c",
+    "push": "rolldown -c --environment DEST:",
+    "test:unit": "vitest run --typecheck",
+    "test": "node --run fmt:check && node --run lint && node --run test:unit",
+    "watch": "rolldown -cw"
   },
-  "homepage": "https://github.com/screepers/screeps-typescript-starter#readme",
   "devDependencies": {
     "@types/lodash": "3.10.2",
     "@types/screeps": "screepts/typed-screeps",
+    "oxfmt": ">=0.40.0 <2.0.0",
     "oxlint": "^1.50.0",
     "oxlint-tsgolint": ">=0.17.0 <2.0.0",
-    "prettier": "^2.7.1",
     "rolldown": "^1.0.0-rc.9",
-    "rollup-plugin-screeps-world": "^2.0.0",
+    "rollup-plugin-screeps-world": "^1.0.4",
     "source-map-js": "^1.2.1",
     "typescript": "^5.9.3",
     "vite-tsconfig-paths": "^6.1.1",
