@@ -4,14 +4,15 @@
     "lib": ["es2018"],
     "target": "es2018",
     "moduleResolution": "Node",
-    "outDir": "dist",
-    "baseUrl": "src/",
+    "paths": {
+      "*": ["./src/*"]
+    },
     "sourceMap": true,
     "strict": true,
     "experimentalDecorators": true,
     "noImplicitReturns": true,
     "allowSyntheticDefaultImports": true,
-    "allowUnreachableCode": false
-  },
-  "exclude": ["node_modules"]
+    "allowUnreachableCode": false,
+    "types": ["screeps", "lodash", "node"]
+  }
 }
