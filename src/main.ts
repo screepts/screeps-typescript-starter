@@ -39,3 +39,5 @@ export const loop = ErrorMapper.wrapLoop(() => {
     }
   }
 });
+
+global.log = (...args: any[]) => console.log("LOG:", ...args);
