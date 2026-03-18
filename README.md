@@ -19,17 +19,17 @@ npm install
 
 Fire up your preferred editor with typescript installed and you are good to go!
 
-### Rollup and code upload
+### Rolldown and code upload
 
-Screeps Typescript Starter uses rollup to compile your typescript and upload it to a screeps server.
+Screeps Typescript Starter uses rolldown to compile your typescript and upload it to a screeps server.
 
 Move or copy `screeps.example.yaml` to `screeps.yaml` and edit it, changing the credentials and optionally adding or removing some of the destinations.
 
-Running `rollup -c` will compile your code and do a "dry run", preparing the code for upload but not actually pushing it. Running `rollup -c --environment DEST:main` will compile your code, and then upload it to a screeps server using the `main` config from `screeps.yaml`.
+Running `rolldown -c` will compile your code and do a "dry run", preparing the code for upload but not actually pushing it. Running `rolldown -c --environment DEST:main` will compile your code, and then upload it to a screeps server using the `main` config from `screeps.yaml`.
 
-You can use `-cw` instead of `-c` to automatically re-run when your source code changes - for example, `rollup -cw --environment DEST:main` will automatically upload your code to the `main` configuration every time your code is changed.
+You can use `-cw` instead of `-c` to automatically re-run when your source code changes - for example, `rolldown -cw --environment DEST:main` will automatically upload your code to the `main` configuration every time your code is changed.
 
-Finally, there are also NPM scripts that serve as aliases for these commands in `package.json` for IDE integration. Running `npm run build -- --environment DEST:main` is equivalent to `rollup -c --environment DEST:main`, and `npm run watch` is equivalent to `rollup -cw`.
+Finally, there are also NPM scripts that serve as aliases for these commands in `package.json` for IDE integration. Running `npm run build -- --environment DEST:main` is equivalent to `rolldown -c --environment DEST:main`, and `npm run watch` is equivalent to `rolldown -cw`.
 
 #### Important! To upload code to a private server, you must have [screepsmod-auth](https://github.com/ScreepsMods/screepsmod-auth) installed and configured!
 
