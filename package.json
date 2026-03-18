@@ -6,9 +6,8 @@
   "scripts": {
     "lint": "oxlint --type-check --type-aware",
     "build": "rolldown -c",
-    "test": "npm run test-unit",
-    "test-unit": "mocha test/unit/**/*.ts",
-    "test-integration": "echo 'See docs/in-depth/testing.md for instructions on enabling integration tests'",
+    "test": "node --run lint && node --run test:unit",
+    "test:unit": "vitest run --typecheck",
     "watch": "rolldown -cw"
   },
   "repository": {
@@ -22,25 +21,17 @@
   },
   "homepage": "https://github.com/screepers/screeps-typescript-starter#readme",
   "devDependencies": {
-    "@types/chai": "^4.1.6",
     "@types/lodash": "3.10.2",
-    "@types/mocha": "^5.2.5",
-    "@types/node": "^13.13.1",
+    "@types/node": "^25.5.0",
     "@types/screeps": "^3.2.3",
-    "@types/sinon": "^5.0.5",
-    "@types/sinon-chai": "^3.2.0",
-    "chai": "^4.2.0",
-    "mocha": "^5.2.0",
     "oxlint": "^1.50.0",
     "oxlint-tsgolint": ">=0.17.0 <2.0.0",
     "prettier": "^2.7.1",
     "rolldown": "^1.0.0-rc.9",
     "rollup-plugin-screeps-world": "^2.0.0",
     "source-map-js": "^1.2.1",
-    "sinon": "^6.3.5",
-    "sinon-chai": "^3.2.0",
-    "ts-node": "^10.2.0",
-    "tsconfig-paths": "^3.10.1",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vite-tsconfig-paths": "^6.1.1",
+    "vitest": "^4.1.0"
   }
 }

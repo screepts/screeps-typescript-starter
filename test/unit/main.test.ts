@@ -1,11 +1,9 @@
-import {assert} from "chai";
-import {loop} from "../../src/main";
+import { assert, describe, it, beforeEach } from "vitest";
+import { loop } from "../../src/main";
 import {Game, Memory} from "./mock"
 
 describe("main", () => {
-  before(() => {
-    // runs before all test in this block
-  });
+  // runs before all test in this block
 
   beforeEach(() => {
     // runs before each test in this block
