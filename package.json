@@ -3,15 +3,15 @@
   "version": "4.0.0",
   "private": true,
   "description": "A starter template for Screeps using TypeScript, Rolldown and Oxc",
-  "homepage": "https://github.com/screepers/screeps-typescript-starter#readme",
+  "homepage": "https://github.com/screepts/screeps-typescript-starter#readme",
   "bugs": {
-    "url": "https://github.com/screepers/screeps-typescript-starter/issues"
+    "url": "https://github.com/screepts/screeps-typescript-starter/issues"
   },
   "license": "Unlicense",
   "author": "",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/screepers/screeps-typescript-starter.git"
+    "url": "git+https://github.com/screepts/screeps-typescript-starter.git"
   },
   "main": "index.js",
   "scripts": {
