@@ -6,6 +6,7 @@
   "scripts": {
     "lint": "oxlint --type-check --type-aware",
     "build": "rolldown -c",
+    "push": "rolldown -c --environment DEST:",
     "test": "node --run lint && node --run test:unit",
     "test:unit": "vitest run --typecheck",
     "watch": "rolldown -cw"
