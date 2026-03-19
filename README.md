@@ -27,7 +27,7 @@ Copy `screeps.example.yaml` to `screeps.yaml` and edit it, changing the credenti
 
 _Note: you can also use a global file, which is located at `~/.config/screeps/config.yaml` on Linux and macOS, and `%APPDATA%\screeps\config.yaml` on Windows._
 
-Running `rolldown -c` will compile your code and do a "dry run", preparing the code for upload but not actually pushing it. Running `rolldown -c --environment DEST:main` will compile your code, and then upload it to a screeps server using the `main` config from `screeps.yaml`.  Leaving `DEST:` empty will prompt you to select a destination from the list of servers in your config file.
+Running `rolldown -c` will compile your code and do a "dry run", preparing the code for upload but not actually pushing it. Running `rolldown -c --environment DEST:main` will compile your code, and then upload it to a screeps server using the `main` config from `screeps.yaml`. Leaving `DEST:` empty will prompt you to select a destination from the list of servers in your config file.
 
 You can use `-cw` instead of `-c` to automatically re-run when your source code changes - for example, `rolldown -cw --environment DEST:main` will automatically upload your code to the `main` configuration every time your code is changed.
 

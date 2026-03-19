@@ -1,4 +1,4 @@
-import { ErrorMapper } from "utils/ErrorMapper";
+import { ErrorMapper } from "utils/ErrorMapper"
 
 declare global {
   /*
@@ -11,33 +11,32 @@ declare global {
   */
   // Memory extension samples
   interface Memory {
-    uuid: number;
-    log: any;
+    uuid: number
+    log: any
   }
 
   interface CreepMemory {
-    role: string;
-    room: string;
-    working: boolean;
+    role: string
+    room: string
+    working: boolean
   }
-
 }
 // Syntax for adding properties to `global` (ex "global.log")
 declare const global: {
-  log: any;
+  log: any
 }
 
 // When compiling TS to JS and bundling with rollup, the line numbers and file names in error messages change
 // This utility uses source maps to get the line numbers and file names of the original, TS source code
 export const loop = ErrorMapper.wrapLoop(() => {
-  console.log(`Current game tick is ${Game.time}`);
+  console.log(`Current game tick is ${Game.time}`)
 
   // Automatically delete memory of missing creeps
   for (const name in Memory.creeps) {
     if (!(name in Game.creeps)) {
-      delete Memory.creeps[name];
+      delete Memory.creeps[name]
     }
   }
-});
+})
 
-global.log = (...args: any[]) => console.log("LOG:", ...args);
+global.log = (...args: any[]) => console.log("LOG:", ...args)
