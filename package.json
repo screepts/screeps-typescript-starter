@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/screepers/screeps-typescript-starter.git"
+    "url": "git+https://github.com/screepts/screeps-typescript-starter.git"
   },
   "author": "",
   "license": "Unlicense",
   "bugs": {
-    "url": "https://github.com/screepers/screeps-typescript-starter/issues"
+    "url": "https://github.com/screepts/screeps-typescript-starter/issues"
   },
-  "homepage": "https://github.com/screepers/screeps-typescript-starter#readme",
+  "homepage": "https://github.com/screepts/screeps-typescript-starter#readme",
   "devDependencies": {
     "@types/lodash": "3.10.2",
     "@types/screeps": "github:screepts/typed-screeps",
