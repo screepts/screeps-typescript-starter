@@ -1,8 +1,8 @@
 {
   "name": "screeps-typescript-starter",
-  "version": "3.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.1",
+  "private": true,
+  "description": "A starter template for Screeps using TypeScript, Rolldown and Oxc",
   "scripts": {
     "lint": "oxlint --type-check --type-aware",
     "build": "rolldown -c",
