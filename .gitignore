@@ -6,3 +6,6 @@ dist
 screeps.json
 screeps.yaml
 /server
+.zig-cache
+zig-out
+zig-pkg

@@ -4,15 +4,15 @@
     "lib": ["es2024"],
     "target": "es2024",
     "moduleResolution": "bundler",
-    "paths": {
-      "*": ["./src/*"]
-    },
     "sourceMap": true,
     "strict": true,
     "experimentalDecorators": true,
     "noImplicitReturns": true,
     "allowSyntheticDefaultImports": true,
     "allowUnreachableCode": false,
-    "types": ["screeps", "lodash"]
+    "paths": {
+      "*": ["./src/*"]
+    },
+    "types": ["node", "screeps"]
   }
 }

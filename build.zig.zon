@@ -1,0 +1,17 @@
+.{
+    .name = .spud,
+    .version = "0.0.1",
+    .fingerprint = 0x14a890cc005b09f0, // Changing this has security and trust implications.
+    .minimum_zig_version = "0.16.0",
+    .dependencies = .{
+        .zlint = .{
+            .url = "https://github.com/DonIsaac/zlint/archive/refs/tags/v0.10.0.zip",
+            .hash = "zlint-0.10.0-6ZchDlqWEgAAMK9-TMtq6EdKdOMd-o9MQs8sQqWBmHoZ",
+        },
+    },
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+    },
+}
