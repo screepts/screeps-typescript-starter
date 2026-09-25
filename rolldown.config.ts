@@ -3,7 +3,7 @@ import { spawn } from "node:child_process"
 import screeps from "rollup-plugin-screeps-world"
 
 export default defineConfig({
-  input: "src/main.js",
+  input: "src/main.ts",
   output: {
     format: "cjs",
     file: "dist/main.js",
@@ -30,6 +30,7 @@ function zig(): Plugin {
       const cwd = await this.fs.realpath(".")
       this.addWatchFile(joinPath(cwd, "build.zig"))
       this.addWatchFile(joinPath(cwd, "build.zig.zon"))
+      this.addWatchFile(joinPath(cwd, "tools/generate-bindings.mts"))
       await addWatchDir(this, cwd, ".zig")
 
       this.emitFile({
@@ -37,7 +38,7 @@ function zig(): Plugin {
         fileName: "spud.wasm",
         source: await this.fs.readFile("zig-out/bin/spud.wasm"),
       })
-    }
+    },
   }
 }
 

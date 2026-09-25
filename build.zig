@@ -61,13 +61,31 @@ pub fn build(b: *std.Build) void {
 
     b.installArtifact(wasm);
 
+    const generate = b.addSystemCommand(&.{"node"});
+    generate.addFileArg(b.path("tools/generate-bindings.mts"));
+    generate.addArtifactArg(wasm);
+    generate.addArg(b.pathFromRoot("src/bindings.generated.ts"));
+    b.getInstallStep().dependOn(&generate.step);
+    const bindings_step = b.step("bindings", "Extract comptime-generated TypeScript bindings from Wasm");
+    bindings_step.dependOn(&generate.step);
+
     const mod_tests = b.addTest(.{
         .root_module = mod,
     });
     const run_mod_tests = b.addRunArtifact(mod_tests);
 
+    const interop_tests = b.addTest(.{
+        .root_module = b.createModule(.{
+            .root_source_file = b.path("src/interop.zig"),
+            .target = native_target,
+        }),
+    });
+    const run_interop_tests = b.addRunArtifact(interop_tests);
+
     const test_step = b.step("test", "Run tests");
+    test_step.dependOn(&generate.step);
     test_step.dependOn(&run_mod_tests.step);
+    test_step.dependOn(&run_interop_tests.step);
 
     // broken https://github.com/DonIsaac/zlint/issues/433 - use zlint binary instead
     //const zlint_dep = b.dependency("zlint", .{});
