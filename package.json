@@ -13,14 +13,17 @@
     "type": "git",
     "url": "git+https://github.com/screepts/screeps-typescript-starter.git"
   },
+  "type": "module",
   "scripts": {
     "lint": "oxlint --type-check --type-aware",
     "build": "rolldown -c",
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
     "push": "rolldown -c --environment DEST:",
-    "test": "node --run fmt:check && node --run lint && node --run test:unit",
+    "test": "node --run fmt:check && node --run lint && node --run test:unit && node --run test:integration",
     "test:unit": "vitest run --typecheck",
+    "pretest:integration": "node --run build",
+    "test:integration": "node --experimental-vm-modules --test test/integration/*.test.ts",
     "watch": "rolldown -cw"
   },
   "devDependencies": {
@@ -33,6 +36,11 @@
     "rollup-plugin-screeps-world": "npm:@screepts/rollup-plugin-screeps-world@^1.0.0",
     "source-map-js": "^1.2.1",
     "typescript": "^6.0.3",
-    "vitest": "^4.1.0"
+    "vitest": "^4.1.0",
+    "xxscreeps": ">=0.2.1 <2.0.0"
+  },
+  "allowScripts": {
+    "isolated-vm": true,
+    "ivm-inspect": true
   }
 }
