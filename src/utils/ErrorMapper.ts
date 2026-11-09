@@ -4,6 +4,10 @@ import { SourceMapConsumer, type RawSourceMap } from "source-map-js"
 // This import will be emitted as is in the compiled JS to load compiled source maps at runtime
 declare const require: (path: "main.js.map") => RawSourceMap
 
+function escape(html: string) {
+  return html.replace(/([<&])/g, (char) => `&#x${char.charCodeAt(0).toString(16)};`)
+}
+
 export class ErrorMapper {
   // Cache consumer
   private static _consumer?: SourceMapConsumer
@@ -80,10 +84,12 @@ export class ErrorMapper {
         if (e instanceof Error) {
           if ("sim" in Game.rooms) {
             const message = `Source maps don't work in the simulator - displaying original error`
-            console.log(`<span style='color:red'>${message}<br>${_.escape(e.stack)}</span>`)
+            console.logUnsafe(
+              `<span style='color:red'>${message}<br>${escape(e.stack || "")}</span>`,
+            )
           } else {
-            console.log(
-              `<span style='color:red'>${_.escape(this.sourceMappedStackTrace(e))}</span>`,
+            console.logUnsafe(
+              `<span style='color:red'>${escape(this.sourceMappedStackTrace(e))}</span>`,
             )
           }
         } else {
