@@ -11,6 +11,8 @@ describe("main", () => {
     global.Game = Object.assign({}, Game)
     // @ts-ignore : allow adding Memory to global
     global.Memory = Object.assign({}, Memory)
+    // @ts-ignore: add unsafe console
+    global.console.logUnsafe = console.log
   })
 
   it("should export a loop function", () => {
